@@ -22,3 +22,7 @@ export type ResourcesParamList = {
 export type ProfileParamList = {
   ProfileScreen: undefined;
 };
+
+export type PositivityToolBoxParamList = {
+  PositivityToolBoxScreen: undefined;
+};

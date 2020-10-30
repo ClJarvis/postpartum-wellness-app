@@ -12,10 +12,12 @@ import {
   HomeParamList,
   ResourcesParamList,
   ProfileParamList,
+  PositivityToolBoxParamList,
 } from "../types";
 import HomeScreen from "../screens/HomeScreen";
 import ResourcesScreen from "../screens/ResourcesScreen";
 import ProfileScreen from "../screens/CreateProfileScreen";
+import PositivityToolBoxScreen from "../screens/CreatePositivityToolBoxScreen";
 
 const config = Platform.select({
   web: { headerMode: "screen" },
@@ -62,6 +64,18 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Profile"
         component={TabThreeNavigator}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon
+              name={Platform.OS === "ios" ? "ios-options" : "md-options"}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="PositivityBox"
+        component={TabFourNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <TabBarIcon
@@ -123,3 +137,18 @@ function TabThreeNavigator() {
     </TabThreeStack.Navigator>
   );
 }
+
+const TabFourStack = createStackNavigator<PositivityToolBoxParamList>();
+
+function TabFourNavigator() {
+  return (
+    <TabFourStack.Navigator>
+      <TabFourStack.Screen
+        name="PositivityToolBoxScreen"
+        component={PositivityToolBoxScreen}
+        options={{ headerTitle: "PositivityToolBox" }}
+      />
+    </TabFourStack.Navigator>
+  );
+}
+
