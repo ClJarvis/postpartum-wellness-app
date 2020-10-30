@@ -36,23 +36,46 @@ export default function PositivityToolBoxScreen() {
         contentContainerStyle={styles.contentContainer}
       >
 
-      <View style={styles.container}>
-        <View style={styles.CircleShapeView}>
-        </View>
-      </View>
+
 
         <View style={styles.getStartedContainer}>
           <Text style={styles.getStartedText}>Choose your positivity exercise</Text>
- 
-          <Button
+
+                <View style={styles.container}>
+        <View style={styles.CircleShapeView}>
+         <Button
             style={styles.button}
             mode="contained"
             onPress={() =>
-              console.log("submit", supportNetwork, breastfeeding, partner)
+              console.log("I pressed the affrimation button.")
             }
           >
-            Affirmation!
+            Affirmation
           </Button>
+         <Button
+            style={styles.button}
+            mode="contained"
+            onPress={() =>
+              console.log("I pressed the Mindfulness button.")
+            }
+          >
+            Mindfulness
+          </Button>
+         <Button
+            style={styles.button}
+            mode="contained"
+            onPress={() =>
+              console.log("I pressed the Breathing button.")
+            }
+          >
+            Breathing
+          </Button>
+
+
+        </View>
+      </View>
+ 
+         
         </View>
       </ScrollView>
     </View>
@@ -73,6 +96,8 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 30,
     backgroundColor: "#fff",
+        justifyContent: "center",
+    alignItems: "center",
   },
   getStartedContainer: {
     justifyContent: "center",
@@ -97,6 +122,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 16,
     marginTop: 8,
+    marginLeft: 8,
+    marginRight: 8,
   },
   describe: {
     fontSize: 16,
@@ -106,9 +133,10 @@ const styles = StyleSheet.create({
   },
  
   CircleShapeView: {
-    width: 150,
-    height: 150,
-    borderRadius: 150/2,
-    backgroundColor: '#a0d6ec'
+    width: 650,
+    height: 650,
+    borderRadius: 650/2,
+    backgroundColor: '#a0d6ec',
+    justifyContent: "center",
   },
 });
